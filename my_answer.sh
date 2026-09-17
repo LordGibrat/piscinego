@@ -1,1 +1,1 @@
-echo "John Doe"
+John Doe
