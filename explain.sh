@@ -1,6 +1,6 @@
-Annabel Church
-699607
-Blue Honda
-Brian Boyer
-Hellen Maher
-Matt Waite
+echo "Annabel Church"
+echo "699607"
+echo "Blue Honda"
+echo "Brian Boyer"
+echo "Hellen Maher"
+echo "Matt Waite"
