@@ -1,1 +1,1 @@
-printf 'ls -l | sed -n "n;p"\n' > skip.sh
+ls -l | sed -n "n;p"\n
