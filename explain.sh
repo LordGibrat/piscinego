@@ -1,2 +1,6 @@
-printf "Annabel Church\n699607\nBlue Honda\nBrian Boyer\nHellen Maher\nMatt Waite\n" > explain.sh
-chmod +x explain.sh
+Annabel Church
+699607
+Blue Honda
+Brian Boyer
+Hellen Maher
+Matt Waite
