@@ -1,7 +1,8 @@
 package piscine
 
 func RecursiveFactorial(nb int) int {
-	if nb < 0 {
+	// 0-ден кіші сандарға және 20-дан үлкен сандарға (overflow) 0 қайтарамыз
+	if nb < 0 || nb > 20 {
 		return 0
 	}
 	if nb == 0 {
@@ -9,12 +10,9 @@ func RecursiveFactorial(nb int) int {
 	}
 
 	sub := RecursiveFactorial(nb - 1)
-	if sub == 0 {
-		return 0
-	}
-
 	result := nb * sub
 
+	// Переполнение сақтану тексерісі
 	if result/nb != sub {
 		return 0
 	}
