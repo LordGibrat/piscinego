@@ -25,7 +25,7 @@ func PrintNbrBase(nbr int, base string) {
 	}
 
 	var value uint64
-	if value < 0 {
+	if nbr < 0 {
 		z01.PrintRune('-')
 		value = uint64(-(int64(nbr) + 1)) + 1
 	} else {
