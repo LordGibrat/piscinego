@@ -5,14 +5,20 @@ import "github.com/01-edu/z01"
 func PrintNbrBase(nbr int, base string) {
 	digits := []rune(base)
 	if len(digits) < 2 {
+		z01.PrintRune('N')
+		z01.PrintRune('V')
 		return
 	}
 	for i := 0; i < len(digits); i++ {
 		if digits[i] == '+' || digits[i] == '-' {
+			z01.PrintRune('N')
+			z01.PrintRune('V')
 			return
 		}
 		for j := i + 1; j < len(digits); j++ {
 			if digits[i] == digits[j] {
+				z01.PrintRune('N')
+				z01.PrintRune('V')
 				return
 			}
 		}
