@@ -24,10 +24,12 @@ func PrintNbrBase(nbr int, base string) {
 		}
 	}
 
-	value := int64(nbr)
-	if value < 0 {
+	var value uint64
+	if nbr < 0 {
 		z01.PrintRune('-')
-		value = -value
+		value = uint64(-(int64(nbr) + 1)) + 1
+	} else {
+		value = uint64(nbr)
 	}
 	if value == 0 {
 		z01.PrintRune(digits[0])
@@ -35,9 +37,9 @@ func PrintNbrBase(nbr int, base string) {
 	}
 
 	result := make([]rune, 0)
-	baseSize := int64(len(digits))
+	baseSize := uint64(len(digits))
 	for value > 0 {
-		result = append(result, digits[value%baseSize])
+		result = append(result, digits[int(value%baseSize)])
 		value /= baseSize
 	}
 	for i := len(result) - 1; i >= 0; i-- {
