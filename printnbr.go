@@ -1,6 +1,5 @@
-//go:build ignore
-
-package main
+// Package piscine contains the exercise helper.
+package piscine
 
 import "fmt"
 
