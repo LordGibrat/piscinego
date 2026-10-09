@@ -3,7 +3,7 @@ package piscine
 
 import "fmt"
 
-func main() {
+func AsdfMain() {
 	var name string
 	var age int
 
