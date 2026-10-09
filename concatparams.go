@@ -5,14 +5,12 @@ func ConcatParams(args []string) string {
 		return ""
 	}
 
-	// Вычисляем общую длину результирующей строки (включая символы \n)
 	totalLen := 0
 	for _, s := range args {
 		totalLen += len(s)
 	}
 	totalLen += len(args) - 1
 
-	// Создаем буфер нужного размера для эффективности
 	result := make([]byte, 0, totalLen)
 
 	for i, s := range args {
@@ -24,4 +22,3 @@ func ConcatParams(args []string) string {
 
 	return string(result)
 }
-
