@@ -3,7 +3,7 @@ package piscine
 
 import "fmt"
 
-func main() {
+func PrintNbrMain() {
 	sum := 0
 	for count := 0; count <= 10; count++ {
 		sum += count
