@@ -28,10 +28,12 @@ func main() {
 			printStr(", y = ")
 		}
 		for _, digit := range []int{n / 10, n % 10} {
-			for value, r := range "0123456789" {
+			r := '0'
+			for value := 0; value < 10; value++ {
 				if value == digit {
 					z01.PrintRune(r)
 				}
+				r++
 			}
 		}
 	}
