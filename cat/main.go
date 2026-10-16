@@ -11,21 +11,17 @@ func main() {
 		return
 	}
 
-	failed := false
 	for _, name := range os.Args[1:] {
 		file, err := os.Open(name)
 		if err != nil {
 			os.Stderr.WriteString("ERROR: " + err.Error() + "\n")
-			failed = true
-			continue
+			os.Exit(1)
 		}
 		if _, err = io.Copy(os.Stdout, file); err != nil {
 			os.Stderr.WriteString("ERROR: " + err.Error() + "\n")
-			failed = true
+			file.Close()
+			os.Exit(1)
 		}
 		file.Close()
-	}
-	if failed {
-		os.Exit(1)
 	}
 }
