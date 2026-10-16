@@ -1,8 +1,9 @@
-package main
+// Package piscine contains the exercise helper.
+package piscine
 
 import "fmt"
 
-func main() {
+func AsdfMain() {
 	var name string
 	var age int
 
