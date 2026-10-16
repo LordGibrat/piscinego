@@ -18,19 +18,22 @@ func printStr(s string) {
 	}
 }
 
-func printInt(n int) {
-	if n >= 10 {
-		printInt(n / 10)
-	}
-	z01.PrintRune('0' + rune(n%10))
-}
-
 func main() {
 	points := &point{}
 	setPoint(points)
-	printStr("x = ")
-	printInt(points.x)
-	printStr(", y = ")
-	printInt(points.y)
+	for i, n := range []int{points.x, points.y} {
+		if i == 0 {
+			printStr("x = ")
+		} else {
+			printStr(", y = ")
+		}
+		for _, digit := range []int{n / 10, n % 10} {
+			for value, r := range "0123456789" {
+				if value == digit {
+					z01.PrintRune(r)
+				}
+			}
+		}
+	}
 	printStr("\n")
 }
