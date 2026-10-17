@@ -16,8 +16,7 @@ func main() {
 	}
 
 	failed := false
-	printed := false
-	for _, name := range os.Args[3:] {
+	for index, name := range os.Args[3:] {
 		data, err := os.ReadFile(name)
 		if err != nil {
 			fmt.Printf("%v\n", err)
@@ -25,7 +24,7 @@ func main() {
 			continue
 		}
 		if len(os.Args) > 4 {
-			if printed {
+			if index > 0 {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %s <==\n", name)
@@ -35,7 +34,6 @@ func main() {
 			start = 0
 		}
 		fmt.Printf("%s", data[start:])
-		printed = true
 	}
 	if failed {
 		os.Exit(1)
