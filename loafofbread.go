@@ -2,6 +2,9 @@ package piscine
 
 func LoafOfBread(str string) string {
 	letters := []rune(str)
+	if len(letters) == 0 {
+		return "\n"
+	}
 	if len(letters) < 5 {
 		return "Invalid Output\n"
 	}
